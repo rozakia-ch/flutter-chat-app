@@ -4,7 +4,7 @@ import 'package:chat_app/enum/chat_message_type.dart';
 class ChatMessage {
   final String text;
   final ChatMessageType messageType;
-  final MessageStatus messageStatus;
+  final ChatMessageStatus messageStatus;
   final bool isSender;
 
   ChatMessage({
