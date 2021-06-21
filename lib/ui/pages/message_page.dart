@@ -15,13 +15,11 @@ class MessagePage extends StatelessWidget {
         body: Column(
           children: [
             Expanded(
-              child: Padding(
+              child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: style.defaultPadding),
-                child: ListView.builder(
-                  itemCount: Constants.demoChatMessages.length,
-                  itemBuilder: (context, index) => MessageItem(
-                    message: Constants.demoChatMessages[index],
-                  ),
+                itemCount: Constants.demoChatMessages.length,
+                itemBuilder: (context, index) => MessageItem(
+                  message: Constants.demoChatMessages[index],
                 ),
               ),
             ),
