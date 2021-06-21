@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightTheme(BuildContext context) {
   return ThemeData.light().copyWith(
+    brightness: Brightness.dark,
     primaryColor: style.primaryColor,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme,
@@ -33,6 +34,7 @@ ThemeData darkTheme(BuildContext context) {
   // Bydefault flutter provie us light and dark theme
   // we just modify it as our need
   return ThemeData.dark().copyWith(
+    brightness: Brightness.light,
     primaryColor: style.primaryColor,
     scaffoldBackgroundColor: style.contentColorLightTheme,
     appBarTheme: appBarTheme,

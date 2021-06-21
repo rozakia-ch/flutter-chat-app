@@ -29,7 +29,7 @@ class SignInOrSignUpPage extends StatelessWidget {
                     minimumSize: Size(double.infinity, 40.0),
                     padding: EdgeInsets.all(style.defaultPadding * 0.75),
                   ),
-                  onPressed: () => Navigator.pushNamed(context, "/home-page"),
+                  onPressed: () => Navigator.pushNamed(context, "/chat-page"),
                   child: Text(
                     "Sign In",
                     style: TextStyle(color: Colors.white),

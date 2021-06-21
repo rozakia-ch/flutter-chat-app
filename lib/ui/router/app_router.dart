@@ -1,4 +1,5 @@
 import 'package:chat_app/ui/pages/chat_page.dart';
+import 'package:chat_app/ui/pages/message_page.dart';
 import 'package:chat_app/ui/pages/signin_or_signup_page.dart';
 import 'package:chat_app/ui/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => SignInOrSignUpPage());
       case '/chat-page':
         return MaterialPageRoute(builder: (context) => ChatPage());
+      case '/message-page':
+        return MaterialPageRoute(builder: (context) => MessagePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
