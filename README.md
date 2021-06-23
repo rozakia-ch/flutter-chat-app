@@ -15,5 +15,6 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 # flutter-chat-app
-[Download APK](https://flutter.dev/docs)
+[Download APK](https://github.com/rozakia-ch/flutter-chat-app/raw/main/app-release.apk)
+
 ![Design](ui.png)
