@@ -1,4 +1,5 @@
 import 'package:chat_app/models/chat.dart';
+import 'package:chat_app/ui/widgets/circle_avatar_with_active_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 
@@ -17,27 +18,9 @@ class ChatItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Stack(
-              children: [
-                CircleAvatar(
-                  radius: 24,
-                  backgroundImage: AssetImage(chat.image),
-                ),
-                if (chat.isActive)
-                  Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      height: 16.0,
-                      width: 16.0,
-                      decoration: BoxDecoration(
-                        color: style.primaryColor,
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Theme.of(context).scaffoldBackgroundColor, width: 3.0),
-                      ),
-                    ),
-                  )
-              ],
+            CircleAvatarWithActiveIndicator(
+              image: chat.image,
+              isActive: chat.isActive,
             ),
             Expanded(
               child: Padding(

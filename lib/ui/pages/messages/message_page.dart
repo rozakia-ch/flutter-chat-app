@@ -1,5 +1,5 @@
 import 'package:chat_app/constants/contants.dart';
-import 'package:chat_app/ui/widgets/message_item.dart';
+import 'package:chat_app/ui/pages/messages/components/message_item.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 import 'package:chat_app/ui/widgets/media_query_container.dart';
 import 'package:flutter/material.dart';

@@ -106,4 +106,6 @@ class Constants {
       isSender: true,
     ),
   ];
+  static final List<String> demoContactsImage =
+      List.generate(5, (index) => "assets/images/user_${index + 1}.png");
 }

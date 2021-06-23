@@ -1,4 +1,5 @@
 import 'package:chat_app/ui/widgets/media_query_container.dart';
+import 'package:chat_app/ui/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 
@@ -22,32 +23,15 @@ class SignInOrSignUpPage extends StatelessWidget {
                   height: 146.0,
                 ),
                 Spacer(),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
-                    backgroundColor: Theme.of(context).colorScheme.secondary,
-                    minimumSize: Size(double.infinity, 40.0),
-                    padding: EdgeInsets.all(style.defaultPadding * 0.75),
-                  ),
-                  onPressed: () => Navigator.pushNamed(context, "/chat-page"),
-                  child: Text(
-                    "Sign In",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                PrimaryButton(
+                  text: "Sign In",
+                  press: () => Navigator.pushNamedAndRemoveUntil(context, "/main-page", (route) => false),
                 ),
                 SizedBox(height: style.defaultPadding * 1.5),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    minimumSize: Size(double.infinity, 40.0),
-                    padding: EdgeInsets.all(style.defaultPadding * 0.75),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                PrimaryButton(
+                  color: Theme.of(context).colorScheme.secondary,
+                  text: "Sign Up",
+                  press: () {},
                 ),
                 Spacer(flex: 2),
               ],

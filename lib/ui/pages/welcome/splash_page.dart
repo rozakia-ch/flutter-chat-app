@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:chat_app/ui/widgets/media_query_container.dart';
 import 'package:flutter/material.dart';
-import 'package:chat_app/ui/themes/style.dart' as style;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashPage extends StatefulWidget {
@@ -23,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     bool? getStarted = prefs.getBool("get_started") != null ? prefs.getBool("get_started") : false;
     String route = getStarted! ? "/signin-or-signup-page" : "/welcome-page";
-    return Timer(duration, () => Navigator.pushNamed(context, route));
+    return Timer(duration, () => Navigator.pushNamedAndRemoveUntil(context, route, (route) => false));
   }
 
   @override

@@ -1,28 +1,22 @@
 import 'package:chat_app/constants/contants.dart';
-import 'package:chat_app/ui/widgets/app_drawer.dart';
-import 'package:chat_app/ui/widgets/chat_item.dart';
-import 'package:chat_app/ui/widgets/fill_outline_button.dart';
+import 'package:chat_app/ui/pages/chats/chat_item.dart';
 import 'package:chat_app/ui/widgets/media_query_container.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 
-class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+class ChatsPage extends StatefulWidget {
+  const ChatsPage({Key? key}) : super(key: key);
 
   @override
-  _ChatPageState createState() => _ChatPageState();
+  _ChatsPageState createState() => _ChatsPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
-  int _selectedIndex = 0;
-
+class _ChatsPageState extends State<ChatsPage> {
   @override
   Widget build(BuildContext context) {
     return MediaQueryContainer(
       child: Scaffold(
         appBar: buildAppBar(),
-        endDrawer: AppDrawer(),
-        bottomNavigationBar: buildBottomNavigationBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: style.primaryColor,
@@ -79,30 +73,6 @@ class _ChatPageState extends State<ChatPage> {
         //   onPressed: () {},
         //   icon: Icon(Icons.more_vert),
         // )
-      ],
-    );
-  }
-
-  BottomNavigationBar buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _selectedIndex,
-      onTap: (value) {
-        setState(() {
-          _selectedIndex = value;
-        });
-      },
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.messenger), label: "Chats"),
-        BottomNavigationBarItem(icon: Icon(Icons.people), label: "People"),
-        BottomNavigationBarItem(icon: Icon(Icons.call), label: "Calls"),
-        BottomNavigationBarItem(
-          icon: CircleAvatar(
-            radius: 14,
-            backgroundImage: AssetImage("assets/images/user_2.png"),
-          ),
-          label: "Profile",
-        ),
       ],
     );
   }

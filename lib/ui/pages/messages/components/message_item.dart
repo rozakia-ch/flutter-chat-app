@@ -1,9 +1,9 @@
 import 'package:chat_app/enum/chat_message_type.dart';
 import 'package:chat_app/models/chat_message.dart';
-import 'package:chat_app/ui/widgets/audio_message.dart';
-import 'package:chat_app/ui/widgets/message_status.dart';
-import 'package:chat_app/ui/widgets/text_message.dart';
-import 'package:chat_app/ui/widgets/video_message.dart';
+import 'package:chat_app/ui/pages/messages/components/audio_message.dart';
+import 'package:chat_app/ui/pages/messages/components/message_status.dart';
+import 'package:chat_app/ui/pages/messages/components/text_message.dart';
+import 'package:chat_app/ui/pages/messages/components/video_message.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 
