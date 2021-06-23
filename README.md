@@ -18,3 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 [Download APK](https://github.com/rozakia-ch/flutter-chat-app/raw/main/app-release.apk)
 
 ![Design](ui.png)
+
