@@ -1,6 +1,7 @@
 import 'package:chat_app/ui/widgets/media_query_container.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -29,7 +30,10 @@ class WelcomePage extends StatelessWidget {
               Spacer(flex: 3),
               FittedBox(
                 child: TextButton(
-                  onPressed: () => Navigator.pushNamed(context, "/signin-or-signup-page"),
+                  onPressed: () {
+                    getStarted();
+                    Navigator.pushNamed(context, "/signin-or-signup-page");
+                  },
                   child: Row(
                     children: [
                       Text(
@@ -53,5 +57,10 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> getStarted() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("get_started", true);
   }
 }

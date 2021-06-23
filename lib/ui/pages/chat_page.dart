@@ -14,7 +14,7 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,38 +29,38 @@ class _ChatPageState extends State<ChatPage> {
           child: Icon(Icons.message, color: Colors.white),
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: style.defaultPadding)
-                    .copyWith(bottom: style.defaultPadding),
-                color: style.primaryColor,
-                child: Row(
-                  children: [
-                    FillOutlineButton(
-                      onPressed: () {},
-                      text: "Recent Messages",
-                    ),
-                    SizedBox(width: style.defaultPadding),
-                    FillOutlineButton(
-                      onPressed: () {},
-                      text: "Active",
-                      isFilled: false,
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: Constants.chatsData.length,
-                  itemBuilder: (context, index) => ChatItem(
-                    chat: Constants.chatsData[index],
-                    onPressed: () => Navigator.pushNamed(context, "/message-page"),
-                  ),
-                ),
-              ),
-            ],
+          // child: Column(
+          //   children: [
+          //     Container(
+          //       padding: EdgeInsets.symmetric(horizontal: style.defaultPadding)
+          //           .copyWith(bottom: style.defaultPadding),
+          //       color: style.primaryColor,
+          //       child: Row(
+          //         children: [
+          //           FillOutlineButton(
+          //             onPressed: () {},
+          //             text: "Recent Messages",
+          //           ),
+          //           SizedBox(width: style.defaultPadding),
+          //           FillOutlineButton(
+          //             onPressed: () {},
+          //             text: "Active",
+          //             isFilled: false,
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //     Expanded(
+          child: ListView.builder(
+            itemCount: Constants.chatsData.length,
+            itemBuilder: (context, index) => ChatItem(
+              chat: Constants.chatsData[index],
+              onPressed: () => Navigator.pushNamed(context, "/message-page"),
+            ),
           ),
+          //     ),
+          //   ],
+          // ),
         ),
       ),
     );

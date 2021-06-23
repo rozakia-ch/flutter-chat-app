@@ -1,7 +1,13 @@
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/ui/themes/style.dart' as style;
 
-class AppDrawer extends StatelessWidget {
+class AppDrawer extends StatefulWidget {
+  @override
+  _AppDrawerState createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -19,10 +25,16 @@ class AppDrawer extends StatelessWidget {
             text: 'Events',
             onTap: () {},
           ),
-          _createDrawerItem(
-            icon: Icons.note,
-            text: 'Notes',
-            onTap: () {},
+          ListTile(
+            title: Row(
+              children: [
+                EasyDynamicThemeSwitch(),
+                Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text("Dark Mode"),
+                )
+              ],
+            ),
           ),
           ListTile(
             title: Text('Version 1.0.0'),
