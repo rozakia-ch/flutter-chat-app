@@ -29,20 +29,20 @@ class ProfilePic extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 50,
-            backgroundImage: AssetImage(image),
+            backgroundImage: NetworkImage(image),
           ),
-          InkWell(
-            onTap: imageUploadBtnPress,
-            child: CircleAvatar(
-              radius: 13,
-              backgroundColor: Theme.of(context).primaryColor,
-              child: Icon(
-                Icons.add,
-                color: Colors.white,
-                size: 20,
-              ),
-            ),
-          )
+          // InkWell(
+          //   onTap: imageUploadBtnPress,
+          //   child: CircleAvatar(
+          //     radius: 13,
+          //     backgroundColor: Theme.of(context).primaryColor,
+          //     child: Icon(
+          //       Icons.add,
+          //       color: Colors.white,
+          //       size: 20,
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
