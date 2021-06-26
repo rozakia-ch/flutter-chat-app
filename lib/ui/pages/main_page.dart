@@ -1,9 +1,11 @@
 import 'package:animations/animations.dart';
+import 'package:chat_app/cubit/contacts_cubit.dart';
 import 'package:chat_app/ui/pages/calls/calls_history_page.dart';
 import 'package:chat_app/ui/pages/chats/chats_page.dart';
 import 'package:chat_app/ui/pages/contacts/contacts_page.dart';
 import 'package:chat_app/ui/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -20,20 +22,25 @@ class _MainPageState extends State<MainPage> {
     CallsHistoryPage(),
     ProfilePage(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageTransitionSwitcher(
         duration: Duration(milliseconds: 1000),
-        transitionBuilder: (child, primaryAnimation, secondaryAnimation) => FadeThroughTransition(
+        transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
+            FadeThroughTransition(
           animation: primaryAnimation,
           secondaryAnimation: secondaryAnimation,
           child: child,
         ),
-        child: IndexedStack(
-          key: ValueKey<int>(pageIndex),
-          children: pageList,
-          index: pageIndex,
+        child: BlocProvider(
+          create: (context) => ContactsCubit(),
+          child: IndexedStack(
+            key: ValueKey<int>(pageIndex),
+            children: pageList,
+            index: pageIndex,
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

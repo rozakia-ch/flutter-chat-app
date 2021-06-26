@@ -1,3 +1,4 @@
+import 'package:chat_app/constants/contants.dart';
 import 'package:chat_app/cubit/auth_cubit.dart';
 import 'package:chat_app/ui/pages/profile/components/info.dart';
 import 'package:chat_app/ui/pages/profile/components/profile_pic.dart';
@@ -8,8 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final String defaultImage =
-        "https://lh3.googleusercontent.com/proxy/ksXPXwJq58-hdZH7yyFQljOI5a_cIWQylKLHSTOu-YX1IgEhOjHAV3zy7YeY-IHls9ibpJ8VtygaDFHEFusyAPydBjwwSji7EuJaEscpD3gYWXyMjLJbBYjFbxadgyE";
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -27,7 +26,11 @@ class ProfilePage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: style.defaultPadding),
             child: Column(
               children: [
-                ProfilePic(image: state is AuthSuccess ? state.user.photoURL! : defaultImage),
+                ProfilePic(
+                  image: state is AuthSuccess
+                      ? state.user.photoURL!
+                      : Constants.defaultImage,
+                ),
                 Text(
                   state is AuthSuccess ? state.user.displayName! : "-",
                   style: Theme.of(context).textTheme.headline6,

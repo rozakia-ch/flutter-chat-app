@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:chat_app/repositories/user_repository.dart';
+import 'package:chat_app/repositories/auth_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -7,11 +7,11 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-  final UserRepository _userRepository = UserRepository();
+  final AuthRepository _authRepository = AuthRepository();
   void authCheck() async {
-    final isSignedIn = await _userRepository.isSignedIn();
+    final isSignedIn = await _authRepository.isSignedIn();
     if (isSignedIn) {
-      final firebaseUser = await _userRepository.getUser();
+      final firebaseUser = await _authRepository.getUser();
       emit(AuthSuccess(user: firebaseUser));
     } else {
       emit(AuthFailure());
@@ -19,11 +19,11 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   void authLoggedIn() async {
-    emit(AuthSuccess(user: await _userRepository.getUser()));
+    emit(AuthSuccess(user: await _authRepository.getUser()));
   }
 
   void authLoggedOut() async {
-    _userRepository.signOut();
+    _authRepository.signOut();
     emit(AuthFailure());
   }
 }

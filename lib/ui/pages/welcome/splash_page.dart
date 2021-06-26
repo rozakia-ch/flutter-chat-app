@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:chat_app/repositories/user_repository.dart';
+import 'package:chat_app/repositories/auth_repository.dart';
 import 'package:chat_app/ui/widgets/media_query_container.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,15 +20,20 @@ class _SplashPageState extends State<SplashPage> {
   startSplashScreen() async {
     var duration = const Duration(seconds: 3);
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool? getStarted = prefs.getBool("get_started") != null ? prefs.getBool("get_started") : false;
-    final UserRepository userRepository = UserRepository();
+    bool? getStarted = prefs.getBool("get_started") != null
+        ? prefs.getBool("get_started")
+        : false;
+    final AuthRepository userRepository = AuthRepository();
     bool isSignedIn = await userRepository.isSignedIn();
     String route = getStarted!
         ? isSignedIn
             ? "/main-page"
             : "/signin-or-signup-page"
         : "/welcome-page";
-    return Timer(duration, () => Navigator.pushNamedAndRemoveUntil(context, route, (route) => false));
+    return Timer(
+        duration,
+        () => Navigator.pushNamedAndRemoveUntil(
+            context, route, (route) => false));
   }
 
   @override

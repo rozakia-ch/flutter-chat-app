@@ -4,60 +4,62 @@ import 'package:chat_app/models/chat.dart';
 import 'package:chat_app/models/chat_message.dart';
 
 class Constants {
+  static const String defaultImage =
+      "https://www.pikpng.com/pngl/m/16-168770_user-iconset-no-profile-picture-icon-circle-clipart.png";
   static List chatsData = [
     Chat(
       name: "Jenny Wilson",
       lastMessage: "Hope you are doing well...",
-      image: "assets/images/user.png",
+      image: defaultImage,
       time: "3m ago",
       isActive: false,
     ),
     Chat(
       name: "Esther Howard",
       lastMessage: "Hello Abdullah! I am...",
-      image: "assets/images/user_2.png",
+      image: defaultImage,
       time: "8m ago",
       isActive: true,
     ),
     Chat(
       name: "Ralph Edwards",
       lastMessage: "Do you have update...",
-      image: "assets/images/user_3.png",
+      image: defaultImage,
       time: "5d ago",
       isActive: false,
     ),
     Chat(
       name: "Jacob Jones",
       lastMessage: "You’re welcome :)",
-      image: "assets/images/user_4.png",
+      image: defaultImage,
       time: "5d ago",
       isActive: true,
     ),
     Chat(
       name: "Albert Flores",
       lastMessage: "Thanks",
-      image: "assets/images/user_5.png",
+      image: defaultImage,
       time: "6d ago",
       isActive: false,
     ),
     Chat(
       name: "Jenny Wilson",
       lastMessage: "Hope you are doing well...",
-      image: "assets/images/user.png",
+      image: defaultImage,
       time: "3m ago",
       isActive: false,
     ),
     Chat(
       name: "Esther Howard",
       lastMessage: "Hello Abdullah! I am...",
-      image: "assets/images/user_2.png",
+      image: defaultImage,
       time: "8m ago",
       isActive: true,
     ),
     Chat(
       name: "Ralph Edwards",
       lastMessage: "Do you have update...",
-      image: "assets/images/user_3.png",
+      image: defaultImage,
       time: "5d ago",
       isActive: false,
     ),
@@ -107,5 +109,5 @@ class Constants {
     ),
   ];
   static final List<String> demoContactsImage =
-      List.generate(5, (index) => "assets/images/user_${index + 1}.png");
+      List.generate(5, (index) => defaultImage);
 }

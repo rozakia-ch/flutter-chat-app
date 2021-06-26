@@ -19,7 +19,7 @@ class CircleAvatarWithActiveIndicator extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: radius,
-          backgroundImage: AssetImage(image!),
+          backgroundImage: NetworkImage(image!),
         ),
         if (isActive!)
           Positioned(
@@ -31,7 +31,10 @@ class CircleAvatarWithActiveIndicator extends StatelessWidget {
               decoration: BoxDecoration(
                 color: style.primaryColor,
                 shape: BoxShape.circle,
-                border: Border.all(color: Theme.of(context).scaffoldBackgroundColor, width: 3),
+                border: Border.all(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  width: 3,
+                ),
               ),
             ),
           )
