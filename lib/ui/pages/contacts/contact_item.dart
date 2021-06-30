@@ -22,7 +22,7 @@ class ContactItem extends StatelessWidget {
         horizontal: style.defaultPadding,
         vertical: style.defaultPadding / 2,
       ),
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, "/message-page"),
       leading: CircleAvatarWithActiveIndicator(
         image: contact.photoUrl,
         isActive: isActive,
